@@ -23,7 +23,7 @@ const COLORS = ['#3D8B5C', '#E8A33D', '#7C6FD1', '#3E8FB0', '#C25F3F', '#D65A8F'
 /** Fire-and-forget canvas confetti burst, respects prefers-reduced-motion. */
 export function Confetti({ active, onDone, durationMs = 2200 }: ConfettiProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+ const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
     if (!active) return;
@@ -96,7 +96,9 @@ export function Confetti({ active, onDone, durationMs = 2200 }: ConfettiProps) {
     animationRef.current = requestAnimationFrame(draw);
 
     return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      if (animationRef.current !== null) {
+  cancelAnimationFrame(animationRef.current);
+}
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);

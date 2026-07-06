@@ -16,7 +16,7 @@ export function Achievements() {
     newlyUnlocked.forEach((achievement) => {
       toast.success(`Achievement unlocked: ${achievement.title}`, { icon: '🏆' });
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [newlyUnlocked]);
 
   const unlockedCount = achievements.filter((a) => a.unlocked).length;
