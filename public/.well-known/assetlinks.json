@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.alert006.sprout",
+      "sha256_cert_fingerprints": [
+        "D2:BD:89:2E:1E:C3:1F:1A:9D:EE:F3:26:BF:9F:ED:C6:52:2D:82:A5:D4:08:84:E6:6C:61:06:EE:78:77:C3:5D"
+      ]
+    }
+  }
+]
